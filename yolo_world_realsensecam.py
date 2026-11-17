@@ -11,8 +11,8 @@ print("YOLOE segmentation model loaded successfully")
 names = ["black rectangular product box",
     "electronics packaging box",
     "black cardboard box",
-    "rectangular box", 
-    #"bottle"
+    "rectangular box",
+    "bottle"
     #"ring"
 ]
 

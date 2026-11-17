@@ -42,23 +42,20 @@ estimated_heights = [row[3] for row in sorted_data]
 
 plt.figure(figsize=(8, 5))
 
-# Original blue measurement points
 plt.scatter(
     actual_distances,
     measured_distances,
-    color="blue",
+    color="red",
     label="D455 Measurements",
     zorder=3
 )
 
-# Red line connecting all measured points
 plt.plot(
     actual_distances,
     measured_distances,
     color="red",
     linestyle="-",
     linewidth=2,
-    label="Connected Measurements",
     zorder=2
 )
 
@@ -67,13 +64,16 @@ plt.plot(
     [min(actual_distances), max(actual_distances)],
     [min(actual_distances), max(actual_distances)],
     color="blue",
-    linestyle="--",
+    linestyle="-",
     label="Ideal Measurement"
 )
 
 plt.xlabel("Actual Distance (m)")
 plt.ylabel("Measured Depth (m)")
 plt.title("Actual Distance vs D455 Measured Depth")
+
+plt.xlim(0, 2)
+plt.ylim(0, 2)
 
 plt.legend()
 plt.grid(True)
@@ -85,23 +85,20 @@ plt.show()
 
 plt.figure(figsize=(8, 5))
 
-# Original blue measurement points
 plt.scatter(
     actual_distances,
     estimated_widths,
-    color="blue",
+    color="red",
     label="Estimated Width",
     zorder=3
 )
 
-# Red line connecting all estimated width points
 plt.plot(
     actual_distances,
     estimated_widths,
     color="red",
     linestyle="-",
     linewidth=2,
-    label="Connected Measurements",
     zorder=2
 )
 
@@ -109,13 +106,17 @@ plt.plot(
 plt.axhline(
     y=actual_width,
     color="blue",
-    linestyle="--",
+    linestyle="-",
     label="Actual Width (16.6 cm)"
 )
 
 plt.xlabel("Actual Distance (m)")
 plt.ylabel("Estimated Width (cm)")
 plt.title("Estimated Width vs Actual Distance")
+
+# Adjusted axis limits
+plt.xlim(0, 2)
+plt.ylim(0, 20)
 
 plt.legend()
 plt.grid(True)
@@ -127,23 +128,20 @@ plt.show()
 
 plt.figure(figsize=(8, 5))
 
-# Original blue measurement points
 plt.scatter(
     actual_distances,
     estimated_heights,
-    color="blue",
+    color="red",
     label="Estimated Height",
     zorder=3
 )
 
-# Red line connecting all estimated height points
 plt.plot(
     actual_distances,
     estimated_heights,
     color="red",
     linestyle="-",
     linewidth=2,
-    label="Connected Measurements",
     zorder=2
 )
 
@@ -151,13 +149,17 @@ plt.plot(
 plt.axhline(
     y=actual_height,
     color="blue",
-    linestyle="--",
+    linestyle="-",
     label="Actual Height (9.1 cm)"
 )
 
 plt.xlabel("Actual Distance (m)")
 plt.ylabel("Estimated Height (cm)")
 plt.title("Estimated Height vs Actual Distance")
+
+# Adjusted axis limits
+plt.xlim(0, 2)
+plt.ylim(0, 12)
 
 plt.legend()
 plt.grid(True)
